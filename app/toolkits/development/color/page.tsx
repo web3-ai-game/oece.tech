@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Copy, Check } from 'lucide-react'
 import { useState } from 'react'
-import '../base64/base64.css'
+import './color.css'
 
 export default function ColorPicker() {
   const [hexColor, setHexColor] = useState('#00fff9')

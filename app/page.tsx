@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Shield, UserX, BookOpen, Code2, Zap, Globe2, ArrowRight, Cpu, Bot, TrendingUp, Cloud, FileText, Lock, Package, Languages, LogIn, UserPlus, Key, Brain, Binary, Skull, Twitter, Youtube, Github, Mail, MessageSquare, Send, MessageCircle, Facebook } from 'lucide-react'
 import { getSeries } from './lib/getTutorials'
+import GeminiChat from './components/GeminiChat'
 
 export default function Home() {
   const allSeries = getSeries()
@@ -99,9 +100,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 三个特色卡片 */}
+        {/* 三个特色卡片 - 教学卡片更宽 */}
         <section className="feature-cards-section">
-          <div className="feature-card card-tutorials">
+          <div className="feature-card card-tutorials wide-card">
             <div className="feature-card-icon">📚</div>
             <h3 className="feature-card-title">最新教學</h3>
             <p className="feature-card-desc">來自實際開發經驗的技術指南和教程</p>
@@ -127,6 +128,61 @@ export default function Home() {
               關注 X →
             </a>
           </div>
+        </section>
+
+        {/* 免費工具預覽卡片 */}
+        <section className="free-tool-preview">
+          <div className="free-tool-header">
+            <Zap className="free-tool-icon" size={32} />
+            <div className="free-tool-info">
+              <h3 className="free-tool-title">🚀 免費常用工具</h3>
+              <p className="free-tool-subtitle">Pro版工具免費體驗 · 無需註冊</p>
+            </div>
+          </div>
+          <div className="free-tool-content">
+            <div className="tool-item">
+              <Globe2 size={24} className="tool-item-icon" />
+              <div className="tool-item-info">
+                <h4 className="tool-item-title">IP 位置查詢</h4>
+                <p className="tool-item-desc">查看您的公網IP、地理位置、ISP信息</p>
+              </div>
+              <Link href="/toolkits/network/ip-check" className="tool-item-btn">
+                立即使用 →
+              </Link>
+            </div>
+            <div className="tool-item">
+              <UserX size={24} className="tool-item-icon" />
+              <div className="tool-item-info">
+                <h4 className="tool-item-title">匿名程度檢測</h4>
+                <p className="tool-item-desc">檢測您的瀏覽器指紋、WebRTC泄漏</p>
+              </div>
+              <Link href="/toolkits/security/privacy-check" className="tool-item-btn">
+                立即使用 →
+              </Link>
+            </div>
+            <div className="tool-item">
+              <Lock size={24} className="tool-item-icon" />
+              <div className="tool-item-info">
+                <h4 className="tool-item-title">DNS 泄漏檢測</h4>
+                <p className="tool-item-desc">檢測您的DNS請求是否泄漏真實位置</p>
+              </div>
+              <Link href="/toolkits/security/dns-leak" className="tool-item-btn">
+                立即使用 →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* 米斯特周 AI 聊天助手 */}
+        <section className="gemini-chat-section">
+          <div className="gemini-section-header">
+            <Bot className="gemini-section-icon" size={32} />
+            <div className="gemini-section-info">
+              <h3 className="gemini-section-title">💬 與米斯特周聊天</h3>
+              <p className="gemini-section-subtitle">數位游牧開發者 · 由 Gemini 2.5 Pro 驅動 · 免費使用</p>
+            </div>
+          </div>
+          <GeminiChat />
         </section>
 
         {/* 工具包预览目录 */}

@@ -1,8 +1,8 @@
 'use client'
 import Link from 'next/link'
-import { ArrowLeft, Copy, Check, Minimize2, Maximize2 } from 'lucide-react'
+import { ArrowLeft, Copy, Check, Maximize2, Minimize2 } from 'lucide-react'
 import { useState } from 'react'
-import '../base64/base64.css'
+import './json.css'
 
 export default function JSONFormatter() {
   const [input, setInput] = useState('')

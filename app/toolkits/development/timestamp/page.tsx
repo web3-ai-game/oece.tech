@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Copy, Check, Clock } from 'lucide-react'
 import { useState, useEffect } from 'react'
-import '../base64/base64.css'
+import './timestamp.css'
 
 export default function TimestampConverter() {
   const [currentTime, setCurrentTime] = useState(Date.now())

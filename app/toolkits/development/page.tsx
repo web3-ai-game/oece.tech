@@ -13,6 +13,7 @@ const tools = [
   { id: 'color', name: '顏色拾取', desc: 'HEX/RGB/HSL轉換', icon: '🎨' },
   { id: 'uuid', name: 'UUID生成', desc: '通用唯一識別碼', icon: '🆔' },
   { id: 'markdown', name: 'Markdown預覽', desc: '實時Markdown編輯', icon: '📝' },
+  { id: 'ascii', name: '圖片轉字符畫', desc: '圖片轉ASCII藝術', icon: '🖼️' },
   { id: 'jwt', name: 'JWT解析', desc: 'JSON Web Token解析', icon: '🎫' },
   { id: 'yaml', name: 'YAML轉換', desc: 'YAML/JSON互轉', icon: '📄' },
   { id: 'diff', name: 'Diff對比', desc: '文本差異對比', icon: '🔍' },
@@ -49,7 +50,7 @@ export default function ToolkitsDevelopmentPage() {
             <Code2 className="category-icon-large" size={48} />
             <div>
               <h1 className="category-title">02區 · 開發者工具</h1>
-              <p className="category-desc">編碼加密 + 文本處理 + 代碼工具 · 15個工具 · 完全免費</p>
+              <p className="category-desc">編碼加密 + 文本處理 + 代碼工具 · 16個工具 · 完全免費</p>
             </div>
           </div>
         </div>

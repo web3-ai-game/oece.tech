@@ -218,7 +218,6 @@ export default function ToolkitsPage() {
 
       <footer className="footer">
         <div className="footer-content">
-          <p> 2024 OECE.TECH | Coded with  from various corners of the world</p>
           <p>© 2024 OECE.TECH | Coded with ☕ from various corners of the world</p>
         </div>
       </footer>

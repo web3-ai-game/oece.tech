@@ -11,7 +11,7 @@ export default function JourneyPage() {
             <a href="/">首頁</a>
             <a href="/tutorials">教學</a>
             <a href="/journey">旅程</a>
-            <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener">YouTube</a>
+            <a href="/toolkits">工具包</a>
           </nav>
         </div>
       </header>

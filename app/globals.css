@@ -563,6 +563,22 @@ body {
     padding: 1rem;
     font-size: 1rem;
   }
+
+  .feature-cards-section {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card.wide-card {
+    grid-column: span 1;
+  }
+
+  .free-tool-content {
+    grid-template-columns: 1fr;
+  }
+
+  .gemini-section-header {
+    width: 100%;
+  }
 }
 
 /* 首頁系列區域 */
@@ -1137,13 +1153,13 @@ body {
   color: var(--accent-pink);
 }
 
-/* 三个特色卡片 */
+/* 三个特色卡片 - 优化布局 */
 .feature-cards-section {
   max-width: 1400px;
   margin: 4rem auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 2rem;
 }
 
@@ -1156,6 +1172,10 @@ body {
   flex-direction: column;
   gap: 1rem;
   transition: all 0.3s ease;
+}
+
+.feature-card.wide-card {
+  grid-column: span 1;
 }
 
 .card-tutorials {
@@ -1263,6 +1283,150 @@ body {
   background: var(--accent-purple);
   color: var(--bg-primary);
   box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+}
+
+/* 免費工具預覽卡片 */
+.free-tool-preview {
+  max-width: 1400px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+/* Gemini AI 聊天助手區域 */
+.gemini-chat-section {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gemini-section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, transparent 100%);
+  border-left: 4px solid var(--accent-purple);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.gemini-section-icon {
+  color: var(--accent-purple);
+  filter: drop-shadow(0 0 8px var(--accent-purple));
+}
+
+.gemini-section-title {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--accent-purple);
+  margin: 0;
+}
+
+.gemini-section-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.free-tool-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 190, 11, 0.1) 0%, transparent 100%);
+  border-left: 4px solid var(--accent-yellow);
+  border-radius: 8px;
+}
+
+.free-tool-icon {
+  color: var(--accent-yellow);
+  filter: drop-shadow(0 0 8px var(--accent-yellow));
+}
+
+.free-tool-title {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--accent-yellow);
+  margin: 0;
+}
+
+.free-tool-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.free-tool-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tool-item {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.tool-item:hover {
+  border-color: var(--accent-yellow);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 190, 11, 0.3);
+}
+
+.tool-item-icon {
+  color: var(--accent-yellow);
+}
+
+.tool-item-title {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.tool-item-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.tool-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-yellow);
+  color: var(--bg-primary);
+  border: 2px solid var(--accent-yellow);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.tool-item-btn:hover {
+  background: transparent;
+  color: var(--accent-yellow);
+  box-shadow: 0 5px 15px rgba(255, 190, 11, 0.4);
 }
 
 /* 我的故事獨立區域 */

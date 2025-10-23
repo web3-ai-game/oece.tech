@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Copy, Check } from 'lucide-react'
 import { useState } from 'react'
-import '../base64/base64.css'
+import './hash.css'
 
 export default function HashGenerator() {
   const [input, setInput] = useState('')

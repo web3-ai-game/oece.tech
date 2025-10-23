@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Copy, Check, RefreshCw } from 'lucide-react'
 import { useState } from 'react'
-import '../base64/base64.css'
+import './uuid.css'
 
 export default function UUIDGenerator() {
   const [uuids, setUuids] = useState<string[]>([])

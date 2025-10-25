@@ -1,7 +1,11 @@
 import Link from 'next/link'
-import { Shield, UserX, BookOpen, Code2, Zap, Globe2, ArrowRight, Cpu, Bot, TrendingUp, Cloud, FileText, Lock, Package, Languages, LogIn, UserPlus, Key, Brain, Binary, Skull, Twitter, Youtube, Github, Mail, MessageSquare, Send, MessageCircle, Facebook } from 'lucide-react'
+import { Shield, UserX, BookOpen, Code2, Zap, Globe2, ArrowRight, Cpu, Bot, TrendingUp, Cloud, FileText, Lock, Package, Languages, LogIn, UserPlus, Key, Brain, Binary, Skull, Twitter, Youtube, Github, Mail, MessageSquare, Send, MessageCircle, Facebook, Star, Sparkles } from 'lucide-react'
 import { getSeries } from './lib/getTutorials'
 import GeminiChat from './components/GeminiChat'
+import ChatRoom from './components/ChatRoom'
+import QuizGame from './components/QuizGame'
+import MysticTool from './components/MysticTool'
+import AIToolCard from './components/AIToolCard'
 
 export default function Home() {
   const allSeries = getSeries()
@@ -68,35 +72,47 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 我的故事 - 獨立區域 */}
-        <section className="story-section">
-          <div className="story-section-header">
-            <BookOpen className="story-section-icon" size={48} />
-            <div className="story-section-info">
-              <h2 className="story-section-title">我的故事</h2>
-              <p className="story-section-subtitle">從大廠開發者到數位游牧的轉型日記</p>
+        {/* 實時互動區 - AI聊天室 */}
+        <section className="interactive-section">
+          <div className="section-header">
+            <MessageSquare className="section-icon" size={48} />
+            <div className="section-info">
+              <h2 className="section-title">💬 即時互動</h2>
+              <p className="section-subtitle">與AI助手聊天 · Gemini 2.5 Flash驅動</p>
             </div>
           </div>
-          <div className="story-grid">
-            <Link href="/tutorials/story-01-from-developer-to-nomad" className="story-featured-card">
-              <div className="story-badge">最新</div>
-              <h3 className="story-card-title">從大廠開發者到數位游牧：第一週的三個血淚教訓</h3>
-              <p className="story-card-excerpt">
-                離開舒適圈的第一週，我學到了三個關於遠端工作和自我管理的硬核教訓...
-              </p>
-              <div className="story-card-footer">
-                <span className="story-date">2024-10-23</span>
-                <ArrowRight size={20} className="story-arrow" />
-              </div>
-            </Link>
-            <div className="story-upcoming">
-              <p className="upcoming-title">更多故事即將推出</p>
-              <ul className="upcoming-list">
-                <li>第二週：找到屬於自己的工作節奏</li>
-                <li>第三週：建立遠端社交網絡</li>
-                <li>第四週：財務管理與稅務規劃</li>
-              </ul>
+          <ChatRoom />
+        </section>
+
+        {/* 快速測試區 - 3列等寬卡片 */}
+        <section className="quiz-section">
+          <div className="section-header">
+            <Brain className="section-icon" size={48} />
+            <div className="section-info">
+              <h2 className="section-title">⚡ 快速測試</h2>
+              <p className="section-subtitle">AI生成題目 · 實時分析 · 每日3次免費</p>
             </div>
+          </div>
+          <div className="quiz-grid">
+            <QuizGame type="iq" title="IQ閃電戰" icon="🧠" description="5道邏輯推理題，挑戰你的智商" />
+            <QuizGame type="eq" title="EQ溫度計" icon="❤️" description="5道情境判斷，測試你的情商" />
+            <QuizGame type="imdb" title="IMDB影痴指數" icon="🎬" description="5道電影題，證明你是真影迷" />
+          </div>
+        </section>
+
+        {/* 玄學互動橫排 */}
+        <section className="mystic-section">
+          <div className="section-header">
+            <Sparkles className="section-icon" size={48} />
+            <div className="section-info">
+              <h2 className="section-title">✨ 玄學互動</h2>
+              <p className="section-subtitle">AI占卜 · 每日3次 · 神秘而有趣</p>
+            </div>
+          </div>
+          <div className="mystic-carousel">
+            <MysticTool type="tarot" />
+            <MysticTool type="astrology" />
+            <MysticTool type="soul20q" />
           </div>
         </section>
 
@@ -130,46 +146,34 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 免費工具預覽卡片 */}
+        {/* AI工具預覽卡片 */}
         <section className="free-tool-preview">
           <div className="free-tool-header">
             <Zap className="free-tool-icon" size={32} />
             <div className="free-tool-info">
-              <h3 className="free-tool-title">🚀 免費常用工具</h3>
-              <p className="free-tool-subtitle">Pro版工具免費體驗 · 無需註冊</p>
+              <h3 className="free-tool-title">🚀 免費AI工具</h3>
+              <p className="free-tool-subtitle">Gemini 2.5 Flash驅動 · 即時回應</p>
             </div>
           </div>
-          <div className="free-tool-content">
-            <div className="tool-item">
-              <Globe2 size={24} className="tool-item-icon" />
-              <div className="tool-item-info">
-                <h4 className="tool-item-title">IP 位置查詢</h4>
-                <p className="tool-item-desc">查看您的公網IP、地理位置、ISP信息</p>
-              </div>
-              <Link href="/toolkits/network/ip-check" className="tool-item-btn">
-                立即使用 →
-              </Link>
-            </div>
-            <div className="tool-item">
-              <UserX size={24} className="tool-item-icon" />
-              <div className="tool-item-info">
-                <h4 className="tool-item-title">匿名程度檢測</h4>
-                <p className="tool-item-desc">檢測您的瀏覽器指紋、WebRTC泄漏</p>
-              </div>
-              <Link href="/toolkits/security/privacy-check" className="tool-item-btn">
-                立即使用 →
-              </Link>
-            </div>
-            <div className="tool-item">
-              <Lock size={24} className="tool-item-icon" />
-              <div className="tool-item-info">
-                <h4 className="tool-item-title">DNS 泄漏檢測</h4>
-                <p className="tool-item-desc">檢測您的DNS請求是否泄漏真實位置</p>
-              </div>
-              <Link href="/toolkits/security/dns-leak" className="tool-item-btn">
-                立即使用 →
-              </Link>
-            </div>
+          <div className="ai-tools-grid">
+            <AIToolCard
+              icon={<Globe2 size={24} />}
+              title="AI翻譯助手"
+              description="中英互譯，自然流暢"
+              type="translator"
+            />
+            <AIToolCard
+              icon={<Code2 size={24} />}
+              title="代碼助手"
+              description="代碼優化與解釋"
+              type="coder"
+            />
+            <AIToolCard
+              icon={<MessageCircle size={24} />}
+              title="文案潤色"
+              description="專業文案生成"
+              type="writer"
+            />
           </div>
         </section>
 
@@ -356,6 +360,121 @@ export default function Home() {
             </div>
           ))}
         </section>
+
+        {/* 互動體驗區 - Telegram + AI + GitHub */}
+        <section className="interactive-section">
+          <div className="interactive-grid">
+            
+            {/* Telegram 群組卡片 - 左邊最寬 */}
+            <div className="interactive-card telegram-showcase">
+              <div className="card-header">
+                <Send size={32} className="card-icon" />
+                <h3 className="card-title">Telegram 社群</h3>
+              </div>
+              <div className="telegram-preview">
+                <div className="telegram-chat-bubble">
+                  <div className="bubble-header">
+                    <div className="avatar">💕</div>
+                    <span className="username">小愛同學 Bot</span>
+                  </div>
+                  <p className="bubble-text">
+                    嗨～歡迎加入我們的社群！💕<br/>
+                    我是小愛同學，24/7 陪你聊技術、聊旅行～
+                  </p>
+                </div>
+                <div className="telegram-stats">
+                  <div className="stat">
+                    <span className="stat-number">500+</span>
+                    <span className="stat-label">成員</span>
+                  </div>
+                  <div className="stat">
+                    <span className="stat-number">24/7</span>
+                    <span className="stat-label">在線</span>
+                  </div>
+                </div>
+              </div>
+              <a 
+                href="https://t.me/oecezhou" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="card-btn telegram-btn-primary"
+              >
+                <Send size={20} />
+                立即加入群組
+              </a>
+            </div>
+
+            {/* AI 聊天卡片 - 中間 */}
+            <div className="interactive-card ai-chat-card">
+              <div className="card-header">
+                <Bot size={32} className="card-icon" />
+                <h3 className="card-title">Chat with Xiaoai</h3>
+                <span className="ai-badge">Gemini 2.5 Flash</span>
+              </div>
+              <div className="chat-preview">
+                <div className="chat-message user-message">
+                  Hi Xiaoai! 👋
+                </div>
+                <div className="chat-message ai-message">
+                  Hey there~ I'm Xiaoai! 💕<br/>
+                  How can I help you today?
+                </div>
+              </div>
+              <div className="chat-input-preview">
+                <input 
+                  type="text" 
+                  placeholder="Type your message..." 
+                  disabled
+                  className="chat-input"
+                />
+                <button className="chat-send-btn" disabled>
+                  <Send size={18} />
+                </button>
+              </div>
+              <p className="card-hint">
+                Click to start chatting with AI secretary~
+              </p>
+            </div>
+
+            {/* GitHub 項目卡片 - 右邊 */}
+            <div className="interactive-card github-showcase">
+              <div className="card-header">
+                <Github size={32} className="card-icon" />
+                <h3 className="card-title">GitHub Projects</h3>
+              </div>
+              <div className="github-stats">
+                <div className="github-stat">
+                  <Code2 size={20} />
+                  <span>15+ Repos</span>
+                </div>
+                <div className="github-stat">
+                  <Star size={20} />
+                  <span>100+ Stars</span>
+                </div>
+              </div>
+              <div className="github-project-preview">
+                <div className="project-item">
+                  <span className="project-lang">TypeScript</span>
+                  <span className="project-name">oece.tech</span>
+                </div>
+                <div className="project-item">
+                  <span className="project-lang">Python</span>
+                  <span className="project-name">xiaoai-bot</span>
+                </div>
+              </div>
+              <a 
+                href="https://github.com/web3-ai-game" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="card-btn github-btn"
+              >
+                <Github size={20} />
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </section>
+
 
         <section className="premium-section">
           <div className="premium-header">

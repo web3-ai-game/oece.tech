@@ -2,8 +2,8 @@ module.exports = {
   apps: [
     {
       name: 'oece-web',
-      script: 'npx',
-      args: 'http-server out -p 3000 -c-1',
+      script: 'server.js',
+      cwd: '/home/nomad/oece.tech/.next/standalone',
       instances: 1,
       exec_mode: 'fork',
       autorestart: true,
@@ -11,9 +11,10 @@ module.exports = {
       max_memory_restart: '400M',
       env: {
         NODE_ENV: 'production',
+        PORT: '3000',
       },
-      error_file: './logs/pm2-error.log',
-      out_file: './logs/pm2-out.log',
+      error_file: '/home/nomad/oece.tech/logs/pm2-error.log',
+      out_file: '/home/nomad/oece.tech/logs/pm2-out.log',
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
     },
   ],

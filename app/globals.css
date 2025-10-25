@@ -2153,3 +2153,70 @@ body {
     font-size: 0.85rem;
   }
 }
+
+/* Telegram 群組卡片特殊樣式 */
+.card-telegram {
+  background: linear-gradient(135deg, #0088cc 0%, #00bcd4 100%);
+  color: white;
+  border: 2px solid rgba(0, 136, 204, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-telegram::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.card-telegram .feature-card-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.card-telegram .feature-card-title {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-telegram .feature-card-desc {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.telegram-join-btn {
+  background: white !important;
+  color: #0088cc !important;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.telegram-join-btn:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-telegram:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 136, 204, 0.4);
+}

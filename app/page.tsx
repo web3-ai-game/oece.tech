@@ -127,6 +127,23 @@ export default function Home() {
             </Link>
           </div>
           
+          {/* Telegram 群組卡片 */}
+          <div className="feature-card card-telegram wide-card">
+            <div className="feature-card-icon">💬</div>
+            <h3 className="feature-card-title">加入 Telegram 群組</h3>
+            <p className="feature-card-desc">
+              與小愛同學 (@svskilo_bot) 互動，和數位游牧開發者交流技術與旅行心得 💕
+            </p>
+            <a 
+              href="https://t.me/oecezhou" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="feature-card-btn telegram-join-btn"
+            >
+              立即加入 →
+            </a>
+          </div>
+          
           <div className="feature-card card-journey">
             <div className="feature-card-icon">🌍</div>
             <h3 className="feature-card-title">旅程更新</h3>

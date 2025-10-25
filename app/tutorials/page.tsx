@@ -47,12 +47,24 @@ function getSeries(): Series[] {
         .map(file => {
           const filePath = path.join(seriesPath, file)
           const content = fs.readFileSync(filePath, 'utf8')
-          const { data } = matter(content)
+          const { data, content: markdownContent } = matter(content)
           
-          // 从文件名提取序号和标题
+          // 从文件名提取序号
           const match = file.match(/^(\d+\.\d+)[-_](.+)\.md$/)
           const seriesNumber = match ? match[1] : ''
-          const title = data.title || (match ? match[2] : file.replace('.md', ''))
+          
+          // 提取标题：优先使用 frontmatter，其次从内容第一行，最后从文件名
+          let title = data.title
+          if (!title) {
+            const titleMatch = markdownContent.match(/^#\s+(.+)$/m)
+            if (titleMatch) {
+              title = titleMatch[1].trim()
+            } else if (match) {
+              title = match[2].replace(/[-_]/g, ' ')
+            } else {
+              title = file.replace('.md', '')
+            }
+          }
 
           return {
             slug: `${config.folder}/${file.replace('.md', '')}`,

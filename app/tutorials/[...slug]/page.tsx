@@ -24,13 +24,26 @@ function getTutorialContent(slug: string) {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
+  // 如果沒有 frontmatter title，從內容第一行提取
+  let title = data.title
+  if (!title) {
+    const titleMatch = content.match(/^#\s+(.+)$/m)
+    if (titleMatch) {
+      title = titleMatch[1].trim()
+    } else {
+      // 從文件名提取
+      const fileNameMatch = slug.split('/').pop()?.match(/^\d+\.\d+[-_](.+)$/)
+      title = fileNameMatch ? fileNameMatch[1].replace(/[-_]/g, ' ') : slug
+    }
+  }
+
   return {
     slug,
     content,
-    title: data.title || slug,
+    title,
     description: data.description || '',
     date: data.date || '',
-    category: data.category || 'General',
+    category: data.category || '教學',
   }
 }
 

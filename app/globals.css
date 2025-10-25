@@ -2220,3 +2220,87 @@ body {
   transform: translateY(-8px);
   box-shadow: 0 12px 35px rgba(0, 136, 204, 0.4);
 }
+
+/* Telegram Hero Card - 首頁大卡片 */
+.card-telegram-hero {
+  background: linear-gradient(135deg, #0088cc 0%, #00a8e8 50%, #00bcd4 100%);
+  color: white !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 136, 204, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-telegram-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.telegram-hero-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.telegram-hero-title {
+  color: white !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.telegram-hero-desc {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.telegram-hero-btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: white;
+  color: #0088cc !important;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.telegram-hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .telegram-hero-icon {
+    font-size: 2.5rem;
+  }
+  
+  .telegram-hero-title {
+    font-size: 1.4rem;
+  }
+  
+  .telegram-hero-desc {
+    font-size: 0.9rem;
+  }
+}

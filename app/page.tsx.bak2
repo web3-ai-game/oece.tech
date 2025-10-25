@@ -67,6 +67,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+          
+          {/* Telegram 群組按鈕 */}
+          <div className="telegram-cta">
+            <a 
+              href="https://t.me/oecezhou" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="telegram-btn"
+            >
+              <Send size={24} />
+              <div className="telegram-btn-content">
+                <span className="telegram-btn-title">加入 Telegram 群組</span>
+                <span className="telegram-btn-subtitle">與小愛同學和數位游牧者交流 💕</span>
+              </div>
+            </a>
+          </div>
 
         {/* 我的故事 - 獨立區域 */}
         <section className="story-section">
@@ -109,6 +125,23 @@ export default function Home() {
             <Link href="/tutorials" className="feature-card-btn">
               瀏覽教學 →
             </Link>
+          </div>
+          
+          {/* Telegram 群組卡片 */}
+          <div className="feature-card card-telegram wide-card">
+            <div className="feature-card-icon">💬</div>
+            <h3 className="feature-card-title">加入 Telegram 群組</h3>
+            <p className="feature-card-desc">
+              與小愛同學 (@svskilo_bot) 互動，和數位游牧開發者交流技術與旅行心得 💕
+            </p>
+            <a 
+              href="https://t.me/oecezhou" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="feature-card-btn telegram-join-btn"
+            >
+              立即加入 →
+            </a>
           </div>
           
           <div className="feature-card card-journey">
@@ -357,6 +390,37 @@ export default function Home() {
           ))}
         </section>
 
+        {/* 三个特色卡片 */}
+        <section className="feature-cards-section">
+          <div className="feature-card card-tutorials">
+            <div className="feature-card-icon">📚</div>
+            <h3 className="feature-card-title">Latest Tutorials</h3>
+            <p className="feature-card-desc">Technical guides and tutorials from real-world development experiences</p>
+            <Link href="/tutorials" className="feature-card-btn">
+              Browse Tutorials →
+            </Link>
+          </div>
+          
+          <div className="feature-card card-journey">
+            <div className="feature-card-icon">🌍</div>
+            <h3 className="feature-card-title">Journey Updates</h3>
+            <p className="feature-card-desc">Stories and experiences from coding around the world</p>
+            <Link href="/journey" className="feature-card-btn">
+              Read Stories →
+            </Link>
+          </div>
+          
+          <div className="feature-card card-tweets">
+            <div className="feature-card-icon">🔔</div>
+            <h3 className="feature-card-title">Latest Tweets</h3>
+            <p className="feature-card-desc">Twitter feed will be integrated here. Real-time updates from @youraccount</p>
+            <a href="https://twitter.com/youraccount" target="_blank" rel="noopener" className="feature-card-btn">
+              Follow on X →
+            </a>
+          </div>
+        </section>
+
+        {/* 專業內容 - 需要註冊 */}
         <section className="premium-section">
           <div className="premium-header">
             <Lock className="premium-icon" size={40} />

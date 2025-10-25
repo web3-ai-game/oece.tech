@@ -2075,3 +2075,81 @@ body {
     text-align: center;
   }
 }
+
+/* Telegram CTA Button */
+.telegram-cta {
+  margin: 2rem auto;
+  max-width: 600px;
+  padding: 0 1rem;
+}
+
+.telegram-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #0088cc 0%, #00bcd4 100%);
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.telegram-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.telegram-btn:hover::before {
+  left: 100%;
+}
+
+.telegram-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+}
+
+.telegram-btn-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.telegram-btn-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.telegram-btn-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .telegram-cta {
+    margin: 1.5rem auto;
+  }
+  
+  .telegram-btn {
+    padding: 1.2rem 1.5rem;
+    gap: 0.8rem;
+  }
+  
+  .telegram-btn-title {
+    font-size: 1rem;
+  }
+  
+  .telegram-btn-subtitle {
+    font-size: 0.85rem;
+  }
+}

@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'oece-web',
       script: 'npx',
-      args: 'serve out -p 3000',
+      args: 'http-server out -p 3000 -c-1',
       instances: 1,
       exec_mode: 'fork',
       autorestart: true,

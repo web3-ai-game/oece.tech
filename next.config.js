@@ -1,17 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: 'standalone',
   reactStrictMode: true,
   swcMinify: true,
   compress: true,
 
-  // 图片优化 - 静态导出必须禁用
+  // 图片优化
   images: {
     unoptimized: true,
   },
 
   // 尾部斜杠处理
-  trailingSlash: true,
+  trailingSlash: false,
 }
 
 module.exports = nextConfig

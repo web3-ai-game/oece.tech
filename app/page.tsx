@@ -67,6 +67,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+          
+          {/* Telegram 群組按鈕 */}
+          <div className="telegram-cta">
+            <a 
+              href="https://t.me/oecezhou" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="telegram-btn"
+            >
+              <Send size={24} />
+              <div className="telegram-btn-content">
+                <span className="telegram-btn-title">加入 Telegram 群組</span>
+                <span className="telegram-btn-subtitle">與小愛同學和數位游牧者交流 💕</span>
+              </div>
+            </a>
+          </div>
 
         {/* 我的故事 - 獨立區域 */}
         <section className="story-section">

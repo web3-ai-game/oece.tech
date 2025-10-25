@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Shield, UserX, BookOpen, Code2, Zap, Globe2, ArrowRight, Cpu, Bot, TrendingUp, Cloud, FileText, Lock, Package, Languages, LogIn, UserPlus, Key, Brain, Binary, Skull, Twitter, Youtube, Github, Mail, MessageSquare, Send, MessageCircle, Facebook } from 'lucide-react'
 import { getSeries } from './lib/getTutorials'
+import GeminiChat from './components/GeminiChat'
 
 export default function Home() {
   const allSeries = getSeries()
@@ -69,6 +70,123 @@ export default function Home() {
 
         {/* 我的故事 - 獨立區域 */}
         <section className="story-section">
+          <div className="story-section-header">
+            <BookOpen className="story-section-icon" size={48} />
+            <div className="story-section-info">
+              <h2 className="story-section-title">我的故事</h2>
+              <p className="story-section-subtitle">從大廠開發者到數位游牧的轉型日記</p>
+            </div>
+          </div>
+          <div className="story-grid">
+            <Link href="/tutorials/story-01-from-developer-to-nomad" className="story-featured-card">
+              <div className="story-badge">最新</div>
+              <h3 className="story-card-title">從大廠開發者到數位游牧：第一週的三個血淚教訓</h3>
+              <p className="story-card-excerpt">
+                離開舒適圈的第一週，我學到了三個關於遠端工作和自我管理的硬核教訓...
+              </p>
+              <div className="story-card-footer">
+                <span className="story-date">2024-10-23</span>
+                <ArrowRight size={20} className="story-arrow" />
+              </div>
+            </Link>
+            <div className="story-upcoming">
+              <p className="upcoming-title">更多故事即將推出</p>
+              <ul className="upcoming-list">
+                <li>第二週：找到屬於自己的工作節奏</li>
+                <li>第三週：建立遠端社交網絡</li>
+                <li>第四週：財務管理與稅務規劃</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* 三个特色卡片 - 教学卡片更宽 */}
+        <section className="feature-cards-section">
+          <div className="feature-card card-tutorials wide-card">
+            <div className="feature-card-icon">📚</div>
+            <h3 className="feature-card-title">最新教學</h3>
+            <p className="feature-card-desc">來自實際開發經驗的技術指南和教程</p>
+            <Link href="/tutorials" className="feature-card-btn">
+              瀏覽教學 →
+            </Link>
+          </div>
+          
+          <div className="feature-card card-journey">
+            <div className="feature-card-icon">🌍</div>
+            <h3 className="feature-card-title">旅程更新</h3>
+            <p className="feature-card-desc">環遊世界寫程式的故事和經驗</p>
+            <Link href="/journey" className="feature-card-btn">
+              閱讀故事 →
+            </Link>
+          </div>
+          
+          <div className="feature-card card-tweets">
+            <div className="feature-card-icon">🔔</div>
+            <h3 className="feature-card-title">最新動態</h3>
+            <p className="feature-card-desc">Twitter動態將整合在這裡，來自@youraccount的實時更新</p>
+            <a href="https://twitter.com/youraccount" target="_blank" rel="noopener" className="feature-card-btn">
+              關注 X →
+            </a>
+          </div>
+        </section>
+
+        {/* 免費工具預覽卡片 */}
+        <section className="free-tool-preview">
+          <div className="free-tool-header">
+            <Zap className="free-tool-icon" size={32} />
+            <div className="free-tool-info">
+              <h3 className="free-tool-title">🚀 免費常用工具</h3>
+              <p className="free-tool-subtitle">Pro版工具免費體驗 · 無需註冊</p>
+            </div>
+          </div>
+          <div className="free-tool-content">
+            <div className="tool-item">
+              <Globe2 size={24} className="tool-item-icon" />
+              <div className="tool-item-info">
+                <h4 className="tool-item-title">IP 位置查詢</h4>
+                <p className="tool-item-desc">查看您的公網IP、地理位置、ISP信息</p>
+              </div>
+              <Link href="/toolkits/network/ip-check" className="tool-item-btn">
+                立即使用 →
+              </Link>
+            </div>
+            <div className="tool-item">
+              <UserX size={24} className="tool-item-icon" />
+              <div className="tool-item-info">
+                <h4 className="tool-item-title">匿名程度檢測</h4>
+                <p className="tool-item-desc">檢測您的瀏覽器指紋、WebRTC泄漏</p>
+              </div>
+              <Link href="/toolkits/security/privacy-check" className="tool-item-btn">
+                立即使用 →
+              </Link>
+            </div>
+            <div className="tool-item">
+              <Lock size={24} className="tool-item-icon" />
+              <div className="tool-item-info">
+                <h4 className="tool-item-title">DNS 泄漏檢測</h4>
+                <p className="tool-item-desc">檢測您的DNS請求是否泄漏真實位置</p>
+              </div>
+              <Link href="/toolkits/security/dns-leak" className="tool-item-btn">
+                立即使用 →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* 米斯特周 AI 聊天助手 */}
+        <section className="gemini-chat-section">
+          <div className="gemini-section-header">
+            <Bot className="gemini-section-icon" size={32} />
+            <div className="gemini-section-info">
+              <h3 className="gemini-section-title">💬 與米斯特周聊天</h3>
+              <p className="gemini-section-subtitle">數位游牧開發者 · 由 Gemini 2.5 Pro 驅動 · 免費使用</p>
+            </div>
+          </div>
+          <GeminiChat />
+        </section>
+
+        {/* 工具包预览目录 */}
+        <section className="toolkits-preview-section">
           <div className="toolkits-preview-header">
             <Package className="toolkits-preview-icon" size={48} />
             <div className="toolkits-preview-info">
@@ -266,38 +384,6 @@ export default function Home() {
             <a href="https://twitter.com/youraccount" target="_blank" rel="noopener" className="feature-card-btn">
               Follow on X →
             </a>
-          </div>
-        </section>
-
-        {/* 我的故事 - 獨立區域 */}
-        <section className="story-section">
-          <div className="story-section-header">
-            <BookOpen className="story-section-icon" size={48} />
-            <div className="story-section-info">
-              <h2 className="story-section-title">我的故事</h2>
-              <p className="story-section-subtitle">從大廠開發者到數位游牧的轉型日記</p>
-            </div>
-          </div>
-          <div className="story-grid">
-            <Link href="/tutorials/story-01-from-developer-to-nomad" className="story-featured-card">
-              <div className="story-badge">最新</div>
-              <h3 className="story-card-title">從大廠開發者到數位游牧：第一週的三個血淚教訓</h3>
-              <p className="story-card-excerpt">
-                離開舒適圈的第一週，我學到了三個關於遠端工作和自我管理的硬核教訓...
-              </p>
-              <div className="story-card-footer">
-                <span className="story-date">2024-10-23</span>
-                <ArrowRight size={20} className="story-arrow" />
-              </div>
-            </Link>
-            <div className="story-upcoming">
-              <p className="upcoming-title">更多故事即將推出</p>
-              <ul className="upcoming-list">
-                <li>第二週：找到屬於自己的工作節奏</li>
-                <li>第三週：建立遠端社交網絡</li>
-                <li>第四週：財務管理與稅務規劃</li>
-              </ul>
-            </div>
           </div>
         </section>
 

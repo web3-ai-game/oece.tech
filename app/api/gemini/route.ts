@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const GEMINI_API_KEY = 'AIzaSyAg9EcQSmmJUpuDm-Ut3j0odFnxtzUZQ7Y'
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || ''
 // 使用 flash 但对外显示为 pro
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent'
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'
+
+if (!GEMINI_API_KEY) {
+  console.error('❌ GEMINI_API_KEY environment variable is not set')
+}
 
 export async function POST(request: NextRequest) {
   try {
